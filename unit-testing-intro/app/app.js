@@ -2,5 +2,7 @@
 findPrefixCode = function(country) {
     if (country == 'Poland') {
         return 48;
+    } else {
+        return 'Unknow country';
     }
 }
