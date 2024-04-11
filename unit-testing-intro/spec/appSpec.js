@@ -1,26 +1,15 @@
 // importowanie funkcji
 var app = require('../app/app');
 
-// tworzymy pierwszy test
 
-describe('Math', function(){
-    //sprawdza sumowanie
-    it('should return 10 when 5 and 5 are given', function(){
-        expect(sum(5,5)).toEqual(10);
+
+describe('String Checker', function(){
+    //pierwszy scenariusz - jeśli podano string o długosci 5 bedzie zaliczony.
+    it('should return 5 when string kursy is given', function(){
+        expect(checkString('kursy')).toEqual(5);
     });
-    //sprawdza zwrot TRUE
-    it('should return true', function(){
-        expect(returnTrue()).toBeTruthy();
-    });
-    //sprawdza zwrot UNDEFINED
-    it('should return undefined', function(){
-        expect(returnUndefined()).toBeUndefined();// "not" przed ".toBe" jest zaprzeczeniem.
-    });
-    //sprawdza identyczność
-    it('should compare two objects', function(){
-        var a = {};
-        var b = {};
-        expect(a).toEqual(b);//używając toBe nie zaliczy testu
-    });
-    
+    //drugi scenariusz - jeśli podano inna wartość niż STRING to wyskoczy błąd.
+    it('should throw error when invalid string is given', function(){
+        expect(function(){checkString({name: 'kursy'});}).toThrow();
+    });//musze objąć anonimową funkcją zeby nie wyskakiwał błąd przed ukończeniem testu
 });
