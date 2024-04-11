@@ -1,12 +1,8 @@
-var codes = {
-    'Poland': 48,
-    'Spain': 34,
-    'Germany': 49
-};
-findPrefixCode = function(country) {
-    if (country in codes) {
-        return codes[country];
+
+checkValue = function(v) {
+    if( v > 0 && v < 1000){
+        return 'OK';
     } else {
-        return 'Unknow country';
+        return 'INVALID';
     }
 }
