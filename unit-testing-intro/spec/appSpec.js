@@ -10,5 +10,8 @@ describe('Math', function(){
     it('should return true', function(){
         expect(returnTrue()).toBeTruthy();
     });
+    it('should return undefined', function(){
+        expect(returnUndefined()).toBeUndefined();
+    });
     
 });
