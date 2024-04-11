@@ -1,8 +1,4 @@
 
-checkValue = function(v) {
-    if( v > 0 && v < 1000){
-        return 'OK';
-    } else {
-        return 'INVALID';
-    }
+sum = function(a, b) {
+    return a + b;
 }
