@@ -1,3 +1,6 @@
+// importowanie funkcji
+var app = require('../app/app');
+
 // tworzymy pierwszy test
 
 describe('DialCodeFinder', function(){
