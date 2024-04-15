@@ -1,15 +1,16 @@
+//Wzorzec AAA.
+//Aranżacja - przygotowanie wartości wejsciowych.
+//Działanie(Action)- uruchomienie funkcji.
+//Asercja - sprawdzamy czy wynik jest zgodny z oczekiwaniami.
+
+
+
 // importowanie funkcji
 var app = require('../app/app');
 
-
-
-describe('String Checker', function(){
-    //pierwszy scenariusz - jeśli podano string o długosci 5 bedzie zaliczony.
-    it('should return 5 when string kursy is given', function(){
-        expect(checkString('kursy')).toEqual(5);
-    });
-    //drugi scenariusz - jeśli podano inna wartość niż STRING to wyskoczy błąd.
-    it('should throw error when invalid string is given', function(){
-        expect(function(){checkString({name: 'kursy'});}).toThrow();
-    });//musze objąć anonimową funkcją zeby nie wyskakiwał błąd przed ukończeniem testu
+describe('Array Length', function(){
+  it('should return 3 when array with 3 elements is given', function(){//powinno być zaliczone jeśliw tablicy są 3 elementy(ARANŻACJA).
+    var arr = [23,55,44];
+    expect(getArrLength(arr)).toEqual(3);//spodziewanie się 3 elementów.(ASERCJA)
+  });
 });
