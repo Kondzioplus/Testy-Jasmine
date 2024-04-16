@@ -1,8 +1,4 @@
-//LOGIKE używamy w implementacji!
-checkString = function(string) {
-    if (!(typeof string === 'string')) {
-        return false;
-    } else {
-        return string.length;
-    }
+//Generator liczb losowych od 1 do 999.
+generateRandInt = function() {
+    return Math.floor(Math.random() * 1000);
 }
