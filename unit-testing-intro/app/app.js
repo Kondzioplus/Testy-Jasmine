@@ -1,4 +1,8 @@
-
-getArrLength = function(arr) {
-    return arr.length;//zwraca długość tablicy = iloś elementów(AKCJA).
+//LOGIKE używamy w implementacji!
+checkString = function(string) {
+    if (!(typeof string === 'string')) {
+        return false;
+    } else {
+        return string.length;
+    }
 }
