@@ -1,4 +1,14 @@
-//Generator liczb losowych od 1 do 999.
-generateRandInt = function() {
-    return Math.floor(Math.random() * 1000);
+function App(id,name) {
+    this.name = name;
+    this.id = id;
 }
+
+App.prototype.getName = function(){
+    return this.name;
+};
+
+App.prototype.getID = function(){
+    return this.id;
+};
+
+module.exports = App;
