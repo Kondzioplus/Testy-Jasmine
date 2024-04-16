@@ -8,6 +8,12 @@ describe('App', function(){
         toDoList = new app(1, 'ToDoList');
         //console.log('beforeEach()');
     });
+//TEARDOWN wykonuje sie po zakończeniu naszych testów(reset parametrów).
+    afterEach(function(){
+        toDoList.reset();
+        console.log('afterEach()');
+    });
+
     it('getName() method should return app name when called on App instance', function() {
         expect(toDoList.getName()).toEqual('ToDoList');
     });
