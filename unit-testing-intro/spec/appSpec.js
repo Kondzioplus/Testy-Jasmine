@@ -1,17 +1,12 @@
 
 var app = require('../app/app');
-//SETUP beforeEach wykonujemy przed każdym testem (znajduja się w nim nasze dane).
+var User = require('../app/user');
+
 describe('App', function(){
     var toDoList;
 
     beforeEach(function(){
         toDoList = new app(1, 'ToDoList');
-        //console.log('beforeEach()');
-    });
-//TEARDOWN wykonuje sie po zakończeniu naszych testów(reset parametrów).
-    afterEach(function(){
-        toDoList.reset();
-        console.log('afterEach()');
     });
 
     it('getName() method should return app name when called on App instance', function() {
@@ -19,5 +14,14 @@ describe('App', function(){
     });
     it('getID() method should return app ID when called on App instance', function() {
         expect(toDoList.getID()).toEqual(1);
+    });
+    it('countUsers() method should return 0 when App has no users', function(){
+        expect(toDoList.countUsers()).toEqual(0);
+    });
+    it('countUsers() method should return 2 when App has 2 users', function(){
+        var user = new User();// DUMMY(atrapa).
+        toDoList.addUser(user);
+        toDoList.addUser(user);
+        expect(toDoList.countUsers()).toEqual(2);
     });
 });
