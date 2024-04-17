@@ -10,5 +10,8 @@
   "license": "ISC",
   "devDependencies": {
     "jasmine-node": "^3.0.0"
+  },
+  "dependencies": {
+    "sinon": "^17.0.1"
   }
 }

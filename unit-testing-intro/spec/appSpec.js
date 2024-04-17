@@ -1,27 +1,23 @@
-
+// TESTY NIEZALICZONE !!!!!!!!!!!!!!!!!
 var app = require('../app/app');
-var User = require('../app/user');
+var sinon = require('sinon');
 
-describe('App', function(){
-    var toDoList;
+describe('Has Valid Name', function(){
 
-    beforeEach(function(){
-        toDoList = new app(1, 'ToDoList');
+    it('should return true when app name is at least 5 chars long', function() {
+        var app = new App();
+        spyOn(app,"getName").and.callFake(function(){
+            return 'To Do List';//STUB
+        });
+        var result = hasValidName(getName());
+        expect(result).toBeTruthy();
     });
-
-    it('getName() method should return app name when called on App instance', function() {
-        expect(toDoList.getName()).toEqual('ToDoList');
-    });
-    it('getID() method should return app ID when called on App instance', function() {
-        expect(toDoList.getID()).toEqual(1);
-    });
-    it('countUsers() method should return 0 when App has no users', function(){
-        expect(toDoList.countUsers()).toEqual(0);
-    });
-    it('countUsers() method should return 2 when App has 2 users', function(){
-        var user = new User();// DUMMY(atrapa).
-        toDoList.addUser(user);
-        toDoList.addUser(user);
-        expect(toDoList.countUsers()).toEqual(2);
+    it('should return false when app name is 3 chars long', function() {
+        var app = new App();
+        spyOn(app,"getName").and.callFake(function(){
+            return 'Int';//STUB
+        });
+        var result = hasValidName(getName());
+        expect(result).toBeFalsy();
     });
 });

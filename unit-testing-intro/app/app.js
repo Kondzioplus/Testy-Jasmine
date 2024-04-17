@@ -1,24 +1,16 @@
-function App(id,name) {
-    this.name = name;
-    this.id = id;
+function App() {
 }
 
-var userList = [];
-
 App.prototype.getName = function(){
-    return this.name;
+    
 };
 
-App.prototype.getID = function(){
-    return this.id;
-};
-
-App.prototype.addUser = function(user){
-    userList.push(user);
-};
-
-App.prototype.countUsers = function(){
-    return userList.length;
+App.prototype.hasValidName = function(appName){
+    if(appName.length >= 5) {
+        return true;
+    } else {
+        return false;
+    }
 };
 
 module.exports = App;
