@@ -1,16 +1,17 @@
 function App() {
-}
-
-App.prototype.getName = function(){
-    
 };
 
-App.prototype.hasValidName = function(appName){
-    if(appName.length >= 5) {
-        return true;
+
+App.prototype.createApp = function(name){
+    if (name.length >= 5){
+        this.saveApp();
     } else {
         return false;
     }
+};
+
+App.prototype.saveApp = function(appName){
+    return true;
 };
 
 module.exports = App;

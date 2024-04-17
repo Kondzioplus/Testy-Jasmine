@@ -1,23 +1,20 @@
 // TESTY NIEZALICZONE !!!!!!!!!!!!!!!!!
 var app = require('../app/app');
-var sinon = require('sinon');
 
-describe('Has Valid Name', function(){
+describe('Create App', function(){
 
-    it('should return true when app name is at least 5 chars long', function() {
+    it('should call saveApp() when name is at least 5 chars long', function() {
+        
         var app = new App();
-        spyOn(app,"getName").and.callFake(function(){
-            return 'To Do List';//STUB
+        spyOn(app, 'saveApp');
+        app.createApp('To Do List');
+        expect(app.saveApp).toHaveBeenCalled();
         });
-        var result = hasValidName(getName());
-        expect(result).toBeTruthy();
-    });
-    it('should return false when app name is 3 chars long', function() {
+    it('should NOT call saveApp() when name is 3 chars long', function() {
+        
         var app = new App();
-        spyOn(app,"getName").and.callFake(function(){
-            return 'Int';//STUB
+        spyOn(app, 'saveApp');
+        app.createApp('ABC');
+        expect(app.saveApp).not.toHaveBeenCalled();
         });
-        var result = hasValidName(getName());
-        expect(result).toBeFalsy();
     });
-});
