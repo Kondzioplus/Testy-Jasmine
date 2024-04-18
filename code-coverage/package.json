@@ -1,0 +1,21 @@
+{
+  "name": "code-coverage",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "nyc mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "mocha": "^10.4.0",
+    "nyc": "^15.1.0"
+  },
+  "dependencies": {
+    "chai": "^5.1.0"
+  }
+}
