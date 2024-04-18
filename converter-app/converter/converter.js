@@ -1,4 +1,4 @@
-
+// instalujemy npm REQUEST.
 var request = require('request');
 getLatestRates = function(callback){
     request('http://api.fixer.io/latest', function(error, response, body){
