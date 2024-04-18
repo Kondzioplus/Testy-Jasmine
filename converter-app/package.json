@@ -10,5 +10,8 @@
   "description": "",
   "dependencies": {
     "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "nock": "^13.5.4"
   }
 }
