@@ -17,4 +17,19 @@ describe('Create App', function(){
         app.createApp('ABC');
         expect(app.saveApp).not.toHaveBeenCalled();
         });
+    it('should call saveApp() with app name', function() {
+        
+        var app = new App();
+        spyOn(app, 'saveApp');
+        app.createApp('To Do List');
+        expect(app.saveApp).toHaveBeenCalled('To Do List');
+        });
+    it('should call saveApp() with twice', function() {
+        
+        var app = new App();
+        spyOn(app, 'saveApp');
+        app.createApp('To Do List');
+        expect(app.saveApp.calls.length).toBe(2);
+        });
+    
     });
