@@ -1,2 +1,2 @@
 # Testy-Jasmine
-Kurs Testy Jednostkowe - strefa kursów
+Kurs Testy Jednostkowe - strefakursów.pl
